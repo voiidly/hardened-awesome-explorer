@@ -10098,7 +10098,7 @@ local create = function(data)
 end
 
 local createSimple = function(class,props)
-    local inst = Instance.new(class)
+    local inst = cloneref(Instance.new(class))
     for i,v in next,props do
         inst[i] = v
     end
