@@ -7920,13 +7920,13 @@ local function main()
         local ud2o = UDim2.fromOffset
         local ud = UDim.new
         local max = math.max
-        local new = cloneref(Instance.new)
-        local TweenSize = new("Frame").TweenSize
+        local new = Instance.new
+        local TweenSize = cloneref(new("Frame")).TweenSize
         local ti = TweenInfo.new
         local delay = delay
 
         local function ripple(object, color)
-            local circle = new('Frame')
+            local circle = cloneref(new('Frame'))
             circle.BackgroundColor3 = color
             circle.BackgroundTransparency = 0.75
             circle.BorderSizePixel = 0
@@ -7934,7 +7934,7 @@ local function main()
             circle.Size = ud2o()
             circle.Position = ud2s(0.5, 0.5)
             circle.Parent = object
-            local rounding = new('UICorner')
+            local rounding = cloneref(new('UICorner'))
             rounding.CornerRadius = ud(1)
             rounding.Parent = circle
 
